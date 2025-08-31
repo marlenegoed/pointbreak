@@ -1,20 +1,21 @@
 import { Search } from "./components/Search";
-import "./App.css";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-wave">
-      <header className="p-4">
-        <p>pointbreak</p>
+    <div className="font-merriweather flex flex-col h-screen bg-gradient">
+      <header className="text-white p-6">
+        <p className="text-xl">pointbreak</p>
       </header>
-      <main className="flex flex-col gap-2 items-center">
-        <h1 className="text-center my-auto">
-          Bereit für die nächste Session? Gib deinen Ort ein:
+      <main className="flex flex-col items-center px-6 h-[calc(100dvh_-_4.75rem)]">
+        <h1 className="text-center  text-white text-3xl drop-shadow-sm leading-12 mb-8">
+          Bereit für deine nächste Session?
+          <br />
+          Gib einen Ort ein und checke das Wetter.
         </h1>
         <Search />
       </main>
-      <footer className="mt-auto p-4">
-        <p className="text-center">Powered by Open-Meteo API</p>
+      <footer className="mt-auto p-4 absolute bottom-0 w-full backdrop-blur-lg z-10">
+        <p className="text-center text-white/60">Powered by Open-Meteo API</p>
       </footer>
     </div>
   );
