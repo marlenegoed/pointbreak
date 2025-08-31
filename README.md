@@ -6,7 +6,6 @@ A small frontend application for your next surfing session in Germany. Search yo
 
 - **Location Search**: Search for cities in Germany with autocomplete.
 - **7-Day Weather Forecast**: Tailored weather information including temperature, wind, and precipitation.
-- **Fast Performance**: Debounced search and optimized API calls
 - **Responsive Design**: Optimized for both desktop and mobile devices
 
 
@@ -37,7 +36,7 @@ A small frontend application for your next surfing session in Germany. Search yo
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/marlenegoed/pointbreak
 cd pointbreak
 ```
 
