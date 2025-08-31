@@ -1,34 +1,37 @@
 import { useState, useEffect } from "react";
+import { fetchLocationCoordinates } from "./openMeteo";
+import { useDebouncedCallback } from "use-debounce";
 
-type Location = {
+export type Location = {
   id: number;
   name: string;
   state: string;
-  lat: string;
-  long: string;
+  lat: number;
+  lon: number;
 };
 
 export type LocationData =
-  | { status: "pending" }
   | { status: "success"; data: Location[] }
   | { status: "error"; message: string };
 
-export const useLocationData = (city: string) => {
+export const useLocationData = (city: string, state?: string) => {
   const [responseData, setResponseData] = useState<LocationData>({
-    status: "pending",
+    status: "success",
+    data: [],
   });
+  const fetchCoordinates = useDebouncedCallback(
+    async (city: string, state?: string) => {
+      if (city === "") return;
 
-  useEffect(() => {
-    async function fetchCoordinates(city: string) {
       try {
-        const response = await fetchLocationCoordinates(city);
+        const response = await fetchLocationCoordinates(city, state);
         const data = response.results?.map((result) => {
           return {
             id: result.id,
             name: result.name,
             state: result.admin1,
-            lat: result.latitute,
-            long: result.longitute,
+            lat: result.latitude,
+            lon: result.longitude,
           };
         });
         setResponseData({
@@ -44,30 +47,12 @@ export const useLocationData = (city: string) => {
           return { ...prev, status: "error", message: message };
         });
       }
-    }
-    fetchCoordinates(city);
-  }, [city]);
+    },
+    300,
+  );
 
+  useEffect(() => {
+    fetchCoordinates(city, state);
+  }, [fetchCoordinates, city, state]);
   return responseData;
 };
-
-type LocationResponse = {
-  id: number;
-  name: string;
-  admin1: string;
-  latitute: string;
-  longitute: string;
-};
-
-async function fetchLocationCoordinates(city: string): Promise<{
-  results: LocationResponse[] | undefined;
-}> {
-  const basePath = "https://geocoding-api.open-meteo.com/v1/search";
-  const queryParams = `?name=${encodeURIComponent(city)}&language=de&countryCode=DE`;
-
-  const response = await fetch(basePath + queryParams);
-
-  if (!response) throw new Error("Fehler beim Abrufen der Ortskoordinaten");
-
-  return await response.json();
-}
