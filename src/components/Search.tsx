@@ -4,6 +4,7 @@ import { useLocationData, type Location } from "../services/useLocationData";
 import { SearchBar, SearchBarArrowBtn, SearchBarInput } from "./SearchBar";
 import { SearchResult, SearchResultItem } from "./SearchResult";
 import { Weather } from "./Weather";
+import { Spinner } from "./Spinner";
 
 export const Search = () => {
   const [value, setValue] = useState("");
@@ -82,6 +83,7 @@ export const Search = () => {
       {message && (
         <p className="max-w-150 text-center text-white mt-4">{message}</p>
       )}
+      {result.status === "pending" && <Spinner />}
     </form>
   );
 };
