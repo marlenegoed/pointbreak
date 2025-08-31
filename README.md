@@ -18,7 +18,7 @@ A small frontend application for your next surfing session in Germany. Search yo
 - **Api request handling**: Use a libary, like [TanStack Query](https://tanstack.com/query/latest) for easier request lifecycle handling  
 - **Design Optimisations**: Improve branding to better match surfing audience. Enhace readability of white text against the background colour. Add Animations and Transitions. 
 - **Search Params**: The URL should contain your search parameter  and populate the input accordingly.  
-
+- **UX**: Replace todays and tomorrows data with "Heute" and "Morgen" for better orientation. Translate wind direction into cardinal directions. Include realtime or hourly forecasts for more precise planning. 
 
 ## Tech Stack
 
