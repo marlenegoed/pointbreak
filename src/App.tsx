@@ -7,7 +7,7 @@ function App() {
         <p className="text-xl">pointbreak</p>
       </header>
       <main className="flex flex-col items-center px-6 h-[calc(100dvh_-_4.75rem)]">
-        <h1 className="text-center  text-white text-3xl drop-shadow-sm leading-12 mb-8">
+        <h1 className="text-center  text-white sm:text-3xl text-xl drop-shadow-sm sm:leading-12 leading-8 mb-8">
           Bereit für deine nächste Session?
           <br />
           Gib einen Ort ein und checke das Wetter.

@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import type { ComponentPropsWithoutRef } from "react";
 
 export const WeatherTile = ({
@@ -30,7 +31,7 @@ export const WeatherTileTitle = ({
   ...props
 }: ComponentPropsWithoutRef<"h2">) => {
   return (
-    <h2 className="text-xl" {...props}>
+    <h2 className="sm:text-xl text-lg" {...props}>
       {children}
     </h2>
   );
@@ -41,7 +42,7 @@ export const WeatherTileContent = ({
   ...props
 }: ComponentPropsWithoutRef<"div">) => {
   return (
-    <div className="flex justify-between" {...props}>
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-4" {...props}>
       {children}
     </div>
   );
@@ -49,10 +50,11 @@ export const WeatherTileContent = ({
 
 export const WeatherTileMeasurement = ({
   children,
+  className,
   ...props
 }: ComponentPropsWithoutRef<"div">) => {
   return (
-    <span className="flex flex-col gap-2" {...props}>
+    <span className={twMerge("flex flex-col gap-2", className)} {...props}>
       {children}
     </span>
   );
@@ -73,11 +75,12 @@ export const WeatherTileMeasurementLabel = ({
 };
 
 export const WeatherTileMeasurementContent = ({
+  className,
   children,
   ...props
 }: ComponentPropsWithoutRef<"div">) => {
   return (
-    <div className="flex gap-2 items-center" {...props}>
+    <div className={twMerge("flex gap-2 items-center", className)} {...props}>
       {children}
     </div>
   );

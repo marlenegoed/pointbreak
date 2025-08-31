@@ -55,17 +55,17 @@ export const Weather = ({ lat, lon }: { lat: number; lon: number }) => {
                 </WeatherTileMeasurementContent>
               </WeatherTileMeasurement>
 
-              <WeatherTileMeasurement>
+              <WeatherTileMeasurement className="sm:justify-self-center justify-self-end sm:text-left text-right">
                 <WeatherTileMeasurementLabel>
                   Windgeschwindigkeit
                 </WeatherTileMeasurementLabel>
-                <WeatherTileMeasurementContent>
+                <WeatherTileMeasurementContent className="sm:justify-start justify-end">
                   <CircleGauge size={16} />
                   {`${el.windSpeedMin.value} / ${el.windSpeedMax.value} ${el.windSpeedMax.unit}`}
                 </WeatherTileMeasurementContent>
               </WeatherTileMeasurement>
 
-              <WeatherTileMeasurement>
+              <WeatherTileMeasurement className="sm:justify-self-end">
                 <WeatherTileMeasurementLabel>
                   Windböen (max)
                 </WeatherTileMeasurementLabel>
@@ -75,11 +75,11 @@ export const Weather = ({ lat, lon }: { lat: number; lon: number }) => {
                 </WeatherTileMeasurementContent>
               </WeatherTileMeasurement>
 
-              <WeatherTileMeasurement>
+              <WeatherTileMeasurement className="justify-self-end sm:text-left text-right">
                 <WeatherTileMeasurementLabel>
                   Niederschlag
                 </WeatherTileMeasurementLabel>
-                <WeatherTileMeasurementContent>
+                <WeatherTileMeasurementContent className="sm:justify-start justify-end">
                   <Droplets size={16} />
                   {`${el.precipitation.value} ${el.precipitation.unit}`}
                 </WeatherTileMeasurementContent>
