@@ -11,7 +11,6 @@ export type Location = {
 };
 
 export type LocationData =
-  | { status: "pending" }
   | { status: "success"; data: Location[] }
   | { status: "error"; message: string };
 
@@ -23,8 +22,6 @@ export const useLocationData = (city: string, state?: string) => {
   const fetchCoordinates = useDebouncedCallback(
     async (city: string, state?: string) => {
       if (city === "") return;
-
-      setResponseData({ status: "pending" });
 
       try {
         const response = await fetchLocationCoordinates(city, state);
