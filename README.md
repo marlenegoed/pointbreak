@@ -2,6 +2,9 @@
 
 A small frontend application for your next surfing session in Germany. Search your location by city and see the weather forecast tailored to surfing for the next seven days. 
 
+<img width="1511" height="823" alt="Screenshot 2025-08-31 at 15 48 57" src="https://github.com/user-attachments/assets/0db719b7-8316-4319-bb56-0f318755abb8" />
+<img width="1511" height="823" alt="Screenshot 2025-08-31 at 15 49 40" src="https://github.com/user-attachments/assets/b6307b4e-e0a3-499c-8831-d1e402469217" />
+
 ## Features
 
 - **Location Search**: Search for cities in Germany with autocomplete.
@@ -14,6 +17,7 @@ A small frontend application for your next surfing session in Germany. Search yo
 - **Accessibility**: Extend Search Input Aria and keyboard navigation following the [W3C compobox pattern](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-both/)
 - **Api request handling**: Use a libary, like [TanStack Query](https://tanstack.com/query/latest) for easier request lifecycle handling  
 - **Design Optimisations**: Improve branding to better match surfing audience. Enhace readability of white text against the background colour. Add Animations and Transitions. 
+- **Search Params**: The URL should contain your search parameter  and populate the input accordingly.  
 
 
 ## Tech Stack
