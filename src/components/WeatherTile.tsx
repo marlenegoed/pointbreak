@@ -7,7 +7,7 @@ export const WeatherTile = ({
 }: ComponentPropsWithoutRef<"li">) => {
   return (
     <li
-      className=" text-white border border-white backdrop-blur-xl rounded-lg w-full p-4 last:mb-16"
+      className=" text-white border border-white rounded-lg w-full p-4 last:mb-16"
       {...props}
     >
       {children}
